@@ -12,8 +12,12 @@ let g:autoloaded_run = 1
 
 " Section:      config
 
-let g:run_compilewin_cmd='split' " split vsplit tabnew
-let g:run_runwin_cmd='split'
+if !exists('g:run_runwin_cmd')
+    let g:run_runwin_cmd='split'
+endif
+if !exists('g:run_compilewin_cmd')
+    let g:run_compilewin_cmd='split' " split vsplit tabnew
+endif
 
 " Section:      commands
 
