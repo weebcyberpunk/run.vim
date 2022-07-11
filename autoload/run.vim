@@ -10,7 +10,7 @@ function! run#Run(args = '')
         let command=a:args
     endif
 
-    execute g:run_open_cmd 'term://'command
+    execute g:run_runwin_cmd 'term://'command
     autocmd TermClose <buffer> bd
     normal a
 
@@ -34,7 +34,7 @@ function! run#Compile(args = '')
         endif
     endfor
 
-    execute g:run_open_cmd 'term://'g:run_compiler_cmd
+    execute g:run_compilewin_cmd 'term://'g:run_compiler_cmd
     autocmd TermClose <buffer> call feedkeys("\<C-\>\<C-n>")
     set filetype=run-compiler
     normal a

@@ -12,7 +12,8 @@ let g:autoloaded_run = 1
 
 " Section:      config
 
-let g:run_open_cmd='split' " split vsplit tabnew
+let g:run_compilewin_cmd='split' " split vsplit tabnew
+let g:run_runwin_cmd='split'
 
 " Section:      commands
 

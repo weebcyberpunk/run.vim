@@ -34,5 +34,6 @@ that, you can simply use `:Compile` to run the same command again.
 To specify a default compiling command, simply set `g:run_compile_cmd` to
 whatever you want on your Vim or Neovim config file.
 
-You can also use `g:run_open_cmd` to specify the Vim command to open the
-terminal window for run.vim: either `split` (the default), `vsplit` or `tabnew`.
+You can also use `g:run_runwin_cmd` and `g:run_compilewin_cmd` to specify the
+Vim command to open the terminal window for each command of run.vim: either
+`split` (the default for both), `vsplit` or `tabnew`.
