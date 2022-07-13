@@ -1,0 +1,60 @@
+*run.txt* run.vim
+
+run.vim - compiling and testing automation
+
+Author: GG weebcyberpunk@gmail.com
+Version: 1.0
+Homepage: github.com/weebcyberpunk/run.vim
+License: MIT
+
+==============================================================================
+INTRODUCTION                                                          *run.vim*
+
+Run.vim is a simple plugin for automation on compiling and testing inside Vim
+or Neovim. It's implemented entirely in Vim Script.
+
+==============================================================================
+USAGE                                                           *run.vim-usage*
+
+Run.vim provides two new commands: |Compile| and |Run|.
+
+*Run*
+|Run| will start a process on the |terminal|, but will automatically enter
+terminal mode and close the window when the process ends. You may use args to
+define a process (for example, `Run python` will start a Python repl), and, if
+called without args, it will default to the |shell| Vim variable.
+
+*Compile*
+|Compile| will also start a process on |terminal|, but it'll leave the buffer
+opened when finished.
+
+The main difference it's that when calling |Compile| with args, it'll set the
+variable |g:run_compile_cmd| to them, and if calling it without args, it'll run
+whatever is in that variable.
+
+This way, you can set the compiling command only once within a session. After
+that, you can simply use |Compile| to run the same command again.
+
+==============================================================================
+SETTINGS                                                     *run.vim-settings*
+
+To specify a default compiling command, simply set |g:run_compile_cmd| to
+whatever you want on your Vim or Neovim config file.
+
+You can also use |g:run_runwin_cmd| and |g:run_compilewin_cmd| to specify the
+Vim command to open the terminal window for each command of run.vim: either
+|split| (the default for both), |vsplit| or |tabnew|.
+
+==============================================================================
+VARIABLES                                                   *run.vim-variables*
+
+*g:run_compile_cmd*     the shell command to run on compilation, changed by
+                      the |Compile| command.
+
+*g:run_runwin_cmd*      the command to open the |terminal| window for |Run|.
+
+*g:run_compilewin_cmd*  the command to open the |terminal| window for
+                      |Compile|.
+
+------------------------------------------------------------------------------
+vim:tw=78:ts=4:ft=help:norl: 
